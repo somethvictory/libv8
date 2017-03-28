@@ -30,7 +30,7 @@ module Libv8
       defines << 'v8_use_external_startup_data=0'
 
       # Do not use the GPLv3 ld.gold binary on Linux
-      defines << 'use_sysroot=0 linux_use_bundled_gold=0 make_clang_dir="" clang_dir=""'
+      defines << 'use_sysroot=0 linux_use_bundled_binutils=0 linux_use_bundled_gold=0 make_clang_dir="" clang_dir=""'
 
       # Pass clang flag to GYP in order to work around GCC compilation failures
       defines << "clang=#{@compiler.is_a?(Compiler::Clang) ? '1' : '0'}"
