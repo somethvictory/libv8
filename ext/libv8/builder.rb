@@ -118,7 +118,7 @@ module Libv8
           unless system "git checkout #{source_version}"
             fail "unable to checkout source for v8 #{source_version}"
           end
-          system "gclient sync" or fail "could not sync v8 build dependencies"
+          system "env #{gyp_defines} gclient sync" or fail "could not sync v8 build dependencies"
           system "git checkout Makefile" # Work around a weird bug on FreeBSD
         end
       end
